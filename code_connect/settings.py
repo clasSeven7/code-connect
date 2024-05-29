@@ -56,9 +56,9 @@ WSGI_APPLICATION = 'code_connect.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'code_connect_db',
+        'NAME': 'code-connect-db',
         'USER': 'postgres',
-        'PASSWORD': 'postgres-admin',
+        'PASSWORD': 'admin',
         'HOST': 'localhost',
         'PORT': '5432',
     }

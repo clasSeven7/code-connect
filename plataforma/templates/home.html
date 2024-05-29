@@ -1,0 +1,487 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'plataforma/css/styles.css' %}" />
+    <link
+      rel="shortcut icon"
+      href="{% static 'plataforma/assets/logo-codeconnect.ico' %}"
+      type="image/x-icon"
+    /> 
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>CodeConnect</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left">
+        <img
+          class="logo"
+          src="./src/assets/logo-codeconnect-branca.png"
+          alt="logo do CodeConnect"
+        />
+        <ul>
+          <li>
+            <img
+              src="/src/assets/notification.png"
+              alt="ícone de notificação"
+            />
+          </li>
+          <li>
+            <img
+              src="./src/assets/inbox.png"
+              alt="ícone de um cartão que representa o inbox"
+            />
+          </li>
+          <li>
+            <img
+              src="./src/assets/video.png"
+              alt="ícone de uma televisão que representa o video"
+            />
+          </li>
+        </ul>
+      </div>
+      <div class="nav-right">
+        <div class="search-box">
+          <img src="./src/assets/search.png" alt="ícone de uma lupa" />
+          <input type="text" placeholder="Procurar" />
+        </div>
+
+        <div class="nav-user-icon online">
+          <img src="./src/assets/profile-pic.png" alt="ícone de usuário" />
+        </div>
+      </div>
+
+      <div class="settings-menu">
+        <div class="settings-menu-inner">
+          <div class="user-profile">
+            <img src="./src/assets/profile-pic.png" alt="" />
+            <div>
+              <p>Jhon Nicholson</p>
+              <a href="#">Veja seu perfil</a>
+            </div>
+          </div>
+          <hr />
+          <div class="user-profile">
+            <img src="./src/assets/feedback.png" alt="" />
+            <div>
+              <p>Da o feedback</p>
+              <a href="#">Ajude-nos a melhorar o novo design</a>
+            </div>
+          </div>
+          <hr />
+
+          <div class="settings-links">
+            <img
+              src="./src/assets/setting.png"
+              class="settings-icon"
+              alt="Ícone de engrenagem"
+            />
+            <a href="#"
+              >Configurações & Privacidade
+              <img
+                src="./src/assets/arrow.png"
+                width="10px"
+                alt="Seta para a direita"
+            /></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="left-sidebar">
+        <div class="imp-links">
+          <a href="#"
+            ><img
+              src="./src/assets/news.png"
+              alt="Tela para ultimas notícias"
+            />Últimas notícias</a
+          >
+          <a href="#"
+            ><img
+              src="./src/assets/friends.png"
+              alt="Dois bonecos juntos de cor azul"
+            />Amigos</a
+          >
+          <a href="#"
+            ><img
+              src="./src/assets/group.png"
+              alt="três bonecos juntos de cor azul"
+            />Grupos</a
+          >
+          <a href="#"
+            ><img
+              src="./src/assets/marketplace.png"
+              alt="Um carrinho de compras azul"
+            />Mercado</a
+          >
+          <a href="#"
+            ><img
+              src="./src/assets/watch.png"
+              alt="Uma televisão com o simbolo do youtube no meio"
+            />Assistir</a
+          >
+          <a href="#">Ver mais</a>
+        </div>
+        <div class="shortcut-links">
+          <p>Seu atalho</p>
+          <a href="#"
+            ><img
+              src="./src/assets/shortcut-1.png"
+              alt="Notebook da apple"
+            />Desenvolvedores da Web</a
+          >
+          <a href="#"
+            ><img
+              src="./src/assets/shortcut-2.png"
+              alt="Uma tela de computador"
+            />Desenvolvedores de Software</a
+          >
+          <a href="#"
+            ><img
+              src="./src/assets/shortcut-3.png"
+              alt="Uma tela de computador"
+            />Desenvolvedores de Mobile</a
+          >
+          <a href="#"
+            ><img
+              src="./src/assets/shortcut-4.png"
+              alt="Uma tela de computador"
+            />Desenvolvedores de Games</a
+          >
+        </div>
+      </div>
+      <div class="main-content">
+        <div class="story-gallery">
+          <div class="story story1">
+            <img src="./src/assets/upload.png" alt="Foto de perfil" />
+            <p>Postar Story</p>
+          </div>
+          <div class="story story2">
+            <img src="./src/assets/member-1.png" alt="Foto de perfil" />
+            <p>Alison</p>
+          </div>
+          <div class="story story3">
+            <img src="./src/assets/member-2.png" alt="Foto de perfil" />
+            <p>Jackson</p>
+          </div>
+          <div class="story story4">
+            <img src="./src/assets/member-3.png" alt="Foto de perfil" />
+            <p>Samona</p>
+          </div>
+          <div class="story story5">
+            <img src="./src/assets/member-4.png" alt="Foto de perfil" />
+            <p>Jhon Doe</p>
+          </div>
+        </div>
+
+        <div class="write-post-container">
+          <div class="user-profile">
+            <img src="./src/assets/profile-pic.png" alt="" />
+            <div>
+              <p>Jhon Nicholson</p>
+              <small>Público <i class="fas fa-caret-down"></i></small>
+            </div>
+          </div>
+
+          <div class="post-input-container">
+            <textarea
+              name="post"
+              id="post"
+              rows="3"
+              placeholder="O que você está pensando, Jhon?"
+            ></textarea>
+            <div class="add-post-links">
+              <a href="#">
+                <img
+                  src="./src/assets/live-video.png"
+                  alt="ícone de televisão simbolo do youtube no meio"
+                />
+                Vídeo ao vivo
+              </a>
+              <a href="#">
+                <img src="./src/assets/photo.png" alt="ícone de uma câmera" />
+                Foto/Vídeo
+              </a>
+              <a href="#"
+                ><img
+                  src="./src/assets/feeling.png"
+                  alt="ícone de uma tag"
+                />Sentimento/atividade</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="post-container">
+          <div class="post-row">
+            <div class="user-profile">
+              <img src="./src/assets/profile-pic.png" alt="" />
+              <div>
+                <p>Jhon Nicholson</p>
+                <span>Junho 24 2024, 13:40 pm</span>
+              </div>
+            </div>
+            <a href="#"><i class="fas fa-ellipsis-v"></i></a>
+          </div>
+
+          <p class="post-text">
+            Inscreva-se <span>@classeven7</span> 👨‍💻 A "clasSeven" está
+            transformando o código em soluções inovadoras | 💡 Impulsionando o
+            seu sucesso digital | 🚀 Construindo um futuro tecnológico de
+            excelência | 📦 Viciado em Aprendizado e Desenvolvimento.
+            <a href="#">#classeven7</a>
+            <a href="#">#canaldoyoutube</a>
+          </p>
+          <img
+            class="post-img"
+            src="./src/assets/feed-image-1.png"
+            alt="Pessoas conversando em um escritório"
+          />
+
+          <div class="post-row">
+            <div class="activity-icons">
+              <div>
+                <img src="./src/assets/like-blue.png" alt="Joinha azul" />
+                120
+              </div>
+              <div>
+                <img src="./src/assets/comments.png" alt="2 balões branco" />
+                45
+              </div>
+              <div>
+                <img src="./src/assets/share.png" alt="Seta pro lado" />
+                20
+              </div>
+            </div>
+            <div class="post-profile-icon">
+              <img src="./src/assets/profile-pic.png" alt="" />
+              <i class="fas fa-caret-down"></i>
+            </div>
+          </div>
+        </div>
+        <div class="post-container">
+          <div class="post-row">
+            <div class="user-profile">
+              <img src="./src/assets/profile-pic.png" alt="" />
+              <div>
+                <p>Jhon Nicholson</p>
+                <span>Junho 24 2024, 13:40 pm</span>
+              </div>
+            </div>
+            <a href="#"><i class="fas fa-ellipsis-v"></i></a>
+          </div>
+
+          <p class="post-text">
+            Inscreva-se <span>@classeven7</span> 👨‍💻 A "clasSeven" está
+            transformando o código em soluções inovadoras | 💡 Impulsionando o
+            seu sucesso digital | 🚀 Construindo um futuro tecnológico de
+            excelência | 📦 Viciado em Aprendizado e Desenvolvimento.
+            <a href="#">#classeven7</a>
+            <a href="#">#canaldoyoutube</a>
+          </p>
+          <img
+            class="post-img"
+            src="./src/assets/feed-image-2.png"
+            alt="Pessoas conversando em um escritório"
+          />
+
+          <div class="post-row">
+            <div class="activity-icons">
+              <div>
+                <img src="./src/assets/like-blue.png" alt="Joinha azul" />
+                120
+              </div>
+              <div>
+                <img src="./src/assets/comments.png" alt="2 balões branco" />
+                45
+              </div>
+              <div>
+                <img src="./src/assets/share.png" alt="Seta pro lado" />
+                20
+              </div>
+            </div>
+            <div class="post-profile-icon">
+              <img src="./src/assets/profile-pic.png" alt="" />
+              <i class="fas fa-caret-down"></i>
+            </div>
+          </div>
+        </div>
+        <div class="post-container">
+          <div class="post-row">
+            <div class="user-profile">
+              <img src="./src/assets/profile-pic.png" alt="" />
+              <div>
+                <p>Jhon Nicholson</p>
+                <span>Junho 24 2024, 13:40 pm</span>
+              </div>
+            </div>
+            <a href="#"><i class="fas fa-ellipsis-v"></i></a>
+          </div>
+
+          <p class="post-text">
+            Inscreva-se <span>@classeven7</span> 👨‍💻 A "clasSeven" está
+            transformando o código em soluções inovadoras | 💡 Impulsionando o
+            seu sucesso digital | 🚀 Construindo um futuro tecnológico de
+            excelência | 📦 Viciado em Aprendizado e Desenvolvimento.
+            <a href="#">#classeven7</a>
+            <a href="#">#canaldoyoutube</a>
+          </p>
+          <img
+            class="post-img"
+            src="./src/assets/feed-image-3.png"
+            alt="Pessoas conversando em um escritório"
+          />
+
+          <div class="post-row">
+            <div class="activity-icons">
+              <div>
+                <img src="./src/assets/like-blue.png" alt="Joinha azul" />
+                120
+              </div>
+              <div>
+                <img src="./src/assets/comments.png" alt="2 balões branco" />
+                45
+              </div>
+              <div>
+                <img src="./src/assets/share.png" alt="Seta pro lado" />
+                20
+              </div>
+            </div>
+            <div class="post-profile-icon">
+              <img src="./src/assets/profile-pic.png" alt="" />
+              <i class="fas fa-caret-down"></i>
+            </div>
+          </div>
+        </div>
+        <div class="post-container">
+          <div class="post-row">
+            <div class="user-profile">
+              <img src="./src/assets/profile-pic.png" alt="" />
+              <div>
+                <p>Jhon Nicholson</p>
+                <span>Junho 24 2024, 13:40 pm</span>
+              </div>
+            </div>
+            <a href="#"><i class="fas fa-ellipsis-v"></i></a>
+          </div>
+
+          <p class="post-text">
+            Inscreva-se <span>@classeven7</span> 👨‍💻 A "clasSeven" está
+            transformando o código em soluções inovadoras | 💡 Impulsionando o
+            seu sucesso digital | 🚀 Construindo um futuro tecnológico de
+            excelência | 📦 Viciado em Aprendizado e Desenvolvimento.
+            <a href="#">#classeven7</a>
+            <a href="#">#canaldoyoutube</a>
+          </p>
+          <img
+            class="post-img"
+            src="./src/assets/feed-image-4.png"
+            alt="Pessoas conversando em um escritório"
+          />
+
+          <div class="post-row">
+            <div class="activity-icons">
+              <div>
+                <img src="./src/assets/like.png" alt="Joinha azul" />
+                100
+              </div>
+              <div>
+                <img src="./src/assets/comments.png" alt="2 balões branco" />
+                05
+              </div>
+              <div>
+                <img src="./src/assets/share.png" alt="Seta pro lado" />
+                27
+              </div>
+            </div>
+            <div class="post-profile-icon">
+              <img src="./src/assets/profile-pic.png" alt="" />
+              <i class="fas fa-caret-down"></i>
+            </div>
+          </div>
+        </div>
+
+        <button class="load-more-btn" type="button">Carregue mais</button>
+      </div>
+      <div class="right-sidebar">
+        <div class="sidebar-title">
+          <h3>Eventos</h3>
+          <a href="#">Ver tudo</a>
+        </div>
+
+        <div class="event">
+          <div class="left-event">
+            <h3>18</h3>
+            <span>Março</span>
+          </div>
+          <div class="right-event">
+            <h4>Mídia social</h4>
+            <p><i class="fas fa-map-marker-alt"></i> Willson Tech PARK</p>
+            <a href="#">Mais informações</a>
+          </div>
+        </div>
+
+        <div class="event">
+          <div class="left-event">
+            <h3>22</h3>
+            <span>Junho</span>
+          </div>
+          <div class="right-event">
+            <h4>Marketing</h4>
+            <p><i class="fas fa-map-marker-alt"></i> Willson Tech PARK</p>
+            <a href="#">Mais informações</a>
+          </div>
+        </div>
+
+        <div class="sidebar-title">
+          <h3>Anúncio</h3>
+          <a href="#">Fechar</a>
+        </div>
+        <img
+          class="slidebar-ads"
+          src="./src/assets/advertisement.png"
+          alt="Pessoas conversando em uma sala de reunião"
+        />
+
+        <div class="sidebar-title">
+          <h3>Conversas</h3>
+          <a href="#">Ocultar bate-papo</a>
+        </div>
+
+        <div class="online-list">
+          <div class="online">
+            <img src="./src/assets/member-1.png" alt="Foto de perfil" />
+          </div>
+          <p>Alison Mina</p>
+        </div>
+
+        <div class="online-list">
+          <div class="online">
+            <img src="./src/assets/member-2.png" alt="Foto de perfil" />
+          </div>
+          <p>Jackson Aston</p>
+        </div>
+
+        <div class="online-list">
+          <div class="online">
+            <img src="./src/assets/member-3.png" alt="Foto de perfil" />
+          </div>
+          <p>Samona Rose</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>Copyright 2024 - <strong>Code Connect</strong> by classeven</p>
+    </div>
+  </body>
+</html>
