@@ -7,8 +7,9 @@
   --quaternary-color: #626262;
   --quinary-color: #9a9a9a;
   --online-color: #41db51;
-  --transition: all 0.3s linear;
+  --bg-color: #fff;
 
+  --transition: all 0.3s linear;
   --box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
   --border: 0.2rem solid rgba(0, 0, 0, 0.1);
   --outline: 0.1rem solid rgba(0, 0, 0, 0.1);
@@ -26,6 +27,12 @@
   transition: all 0.2s linear;
 }
 
+.dark-theme {
+  --primary-color: #000;
+  --secondary-color: #0a0a0a;
+  --bg-color: #000;
+}
+
 html {
   font-size: 62.5%; /* 1rem = 10px */
   overflow-x: hidden;
@@ -35,6 +42,7 @@ html {
 
 body {
   background: var(--secondary-color);
+  transition: background 0.3s;
 }
 
 nav {
@@ -80,7 +88,7 @@ nav {
 }
 
 .search-box {
-  background: var(--secondary-color);
+  background: #fff;
   width: 35rem;
   border-radius: 2rem;
   display: flex;
@@ -135,7 +143,7 @@ nav {
   position: sticky;
   top: 7rem;
   align-self: flex-start;
-  background: #fff;
+  background: var(--bg-color);
   padding: 2rem;
   border-radius: 0.4rem;
   color: var(--quaternary-color);
@@ -349,7 +357,7 @@ nav {
 
 .write-post-container {
   width: 100%;
-  background: #fff;
+  background: var(--bg-color);
   border-radius: 0.6rem;
   padding: 2rem;
   color: var(--quaternary-color);
@@ -412,7 +420,7 @@ nav {
 
 .post-container {
   width: 100%;
-  background: #fff;
+  background: var(--bg-color);
   border-radius: 0.6rem;
   padding: 2rem;
   color: var(--quaternary-color);
@@ -513,13 +521,18 @@ nav {
   position: absolute;
   width: 90%;
   max-width: 35rem;
-  height: 50rem;
-  background: #fff;
+  background: var(--bg-color);
   box-shadow: 0 0 0.1rem rgba(0, 0, 0, 0.4);
   border-radius: 0.4rem;
   overflow: hidden;
   top: 108%;
   right: 5%;
+  max-height: 0;
+  transition: max-height 0.3s;
+}
+
+.settings-menu-height {
+  max-height: 45rem;
 }
 
 .user-profile a {
@@ -537,4 +550,53 @@ nav {
   height: 0.1rem;
   background: var(--quinary-color);
   margin: 1.5rem 0;
+}
+
+.settings-links {
+  display: flex;
+  align-items: center;
+  margin: 1.5rem 0;
+}
+
+.settings-links .settings-icon {
+  width: 3.8rem;
+  margin-right: 1rem;
+  border-radius: 50%;
+}
+
+.settings-links a {
+  display: flex;
+  font-size: 1.5rem;
+  flex: 1;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  color: var(--quinary-color);
+}
+
+#dark-btn {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background: #ccc;
+  width: 4.5rem;
+  border-radius: 1.5rem;
+  padding: 0.2rem 0.3rem;
+  cursor: pointer;
+  display: flex;
+  transition: padding-left 0.3s, background 0.3s;
+}
+
+#dark-btn span {
+  width: 1.8rem;
+  height: 1.8rem;
+  background: #fff;
+  border-radius: 50%;
+  display: block;
+  transition: all 0.3s;
+}
+
+#dark-btn.dark-btn-on {
+  padding-left: 2.3rem;
+  background: #1a1a1a;
 }

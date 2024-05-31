@@ -4,19 +4,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static 'plataforma/css/styles.css' %}" />
+    <link rel="stylesheet" href="{% static 'plataforma/css/styles.css'%}" />
     <link
       rel="shortcut icon"
-      href="{% static 'plataforma/assets/logo-codeconnect.ico' %}"
+      href="{% static 'plataforma/assets/favicon.ico' %}"
       type="image/x-icon"
-    /> 
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
     />
+    <script defer src="{% static 'plataforma/js/script.js'%}"></script>
     <title>CodeConnect</title>
   </head>
   <body>
@@ -24,25 +22,25 @@
       <div class="nav-left">
         <img
           class="logo"
-          src="./src/assets/logo-codeconnect-branca.png"
+          src="{% static 'plataforma/assets/logo-codeconnect-branca.png' %}"
           alt="logo do CodeConnect"
         />
         <ul>
           <li>
             <img
-              src="/src/assets/notification.png"
+              src="{% static 'plataforma/assets/notification.png' %}"
               alt="ícone de notificação"
             />
           </li>
           <li>
             <img
-              src="./src/assets/inbox.png"
+              src="{% static 'plataforma/assets/inbox.png' %}"
               alt="ícone de um cartão que representa o inbox"
             />
           </li>
           <li>
             <img
-              src="./src/assets/video.png"
+              src="{% static 'plataforma/assets/video.png' %}"
               alt="ícone de uma televisão que representa o video"
             />
           </li>
@@ -50,19 +48,22 @@
       </div>
       <div class="nav-right">
         <div class="search-box">
-          <img src="./src/assets/search.png" alt="ícone de uma lupa" />
+          <img src="{% static 'plataforma/assets/search.png' %}" alt="ícone de uma lupa" />
           <input type="text" placeholder="Procurar" />
         </div>
 
-        <div class="nav-user-icon online">
-          <img src="./src/assets/profile-pic.png" alt="ícone de usuário" />
+        <div class="nav-user-icon online" onclick="settingsMenuToggle()">
+          <img src="{% static 'plataforma/assets/profile-pic.png' %}" alt="ícone de usuário" />
         </div>
       </div>
 
       <div class="settings-menu">
+        <div id="dark-btn">
+          <span></span>
+        </div>
         <div class="settings-menu-inner">
           <div class="user-profile">
-            <img src="./src/assets/profile-pic.png" alt="" />
+            <img src="{% static 'plataforma/assets/profile-pic.png' %}" alt="" />
             <div>
               <p>Jhon Nicholson</p>
               <a href="#">Veja seu perfil</a>
@@ -70,7 +71,7 @@
           </div>
           <hr />
           <div class="user-profile">
-            <img src="./src/assets/feedback.png" alt="" />
+            <img src="{% static 'plataforma/assets/feedback.png' %}" alt="" />
             <div>
               <p>Da o feedback</p>
               <a href="#">Ajude-nos a melhorar o novo design</a>
@@ -80,14 +81,56 @@
 
           <div class="settings-links">
             <img
-              src="./src/assets/setting.png"
+              src="{% static 'plataforma/assets/setting.png' %}"
               class="settings-icon"
               alt="Ícone de engrenagem"
             />
             <a href="#"
               >Configurações & Privacidade
               <img
-                src="./src/assets/arrow.png"
+                src="{% static 'plataforma/assets/arrow.png' %}"
+                width="10px"
+                alt="Seta para a direita"
+            /></a>
+          </div>
+          <div class="settings-links">
+            <img
+              src="{% static 'plataforma/assets/help.png' %}"
+              class="settings-icon"
+              alt="Ícone de ajuda"
+            />
+            <a href="#"
+              >Ajuda & Suporte
+              <img
+                src="{% static 'plataforma/assets/arrow.png' %}"
+                width="10px"
+                alt="Seta para a direita"
+            /></a>
+          </div>
+          <div class="settings-links">
+            <img
+              src="{% static 'plataforma/assets/display.png' %}"
+              class="settings-icon"
+              alt="Ícone de display"
+            />
+            <a href="#"
+              >Tela & Acessibilidade
+              <img
+                src="{% static 'plataforma/assets/arrow.png' %}"
+                width="10px"
+                alt="Seta para a direita"
+            /></a>
+          </div>
+          <div class="settings-links">
+            <img
+              src="{% static 'plataforma/assets/logout.png' %}"
+              class="settings-icon"
+              alt="Ícone de uma porta aberta"
+            />
+            <a href="#"
+              >Sair
+              <img
+                src="{% static 'plataforma/assets/arrow.png' %}"
                 width="10px"
                 alt="Seta para a direita"
             /></a>
@@ -101,31 +144,31 @@
         <div class="imp-links">
           <a href="#"
             ><img
-              src="./src/assets/news.png"
+              src="{% static 'plataforma/assets/news.png' %}"
               alt="Tela para ultimas notícias"
             />Últimas notícias</a
           >
           <a href="#"
             ><img
-              src="./src/assets/friends.png"
+              src="{% static 'plataforma/assets/friends.png' %}"
               alt="Dois bonecos juntos de cor azul"
             />Amigos</a
           >
           <a href="#"
             ><img
-              src="./src/assets/group.png"
+              src="{% static 'plataforma/assets/group.png' %}"
               alt="três bonecos juntos de cor azul"
             />Grupos</a
           >
           <a href="#"
             ><img
-              src="./src/assets/marketplace.png"
+              src="{% static 'plataforma/assets/marketplace.png' %}"
               alt="Um carrinho de compras azul"
             />Mercado</a
           >
           <a href="#"
             ><img
-              src="./src/assets/watch.png"
+              src="{% static 'plataforma/assets/watch.png' %}"
               alt="Uma televisão com o simbolo do youtube no meio"
             />Assistir</a
           >
@@ -135,25 +178,25 @@
           <p>Seu atalho</p>
           <a href="#"
             ><img
-              src="./src/assets/shortcut-1.png"
+              src="{% static 'plataforma/assets/shortcut-1.png' %}"
               alt="Notebook da apple"
             />Desenvolvedores da Web</a
           >
           <a href="#"
             ><img
-              src="./src/assets/shortcut-2.png"
+              src="{% static 'plataforma/assets/shortcut-2.png' %}"
               alt="Uma tela de computador"
             />Desenvolvedores de Software</a
           >
           <a href="#"
             ><img
-              src="./src/assets/shortcut-3.png"
+              src="{% static 'plataforma/assets/shortcut-3.png' %}"
               alt="Uma tela de computador"
             />Desenvolvedores de Mobile</a
           >
           <a href="#"
             ><img
-              src="./src/assets/shortcut-4.png"
+              src="{% static 'plataforma/assets/shortcut-4.png' %}"
               alt="Uma tela de computador"
             />Desenvolvedores de Games</a
           >
@@ -162,23 +205,23 @@
       <div class="main-content">
         <div class="story-gallery">
           <div class="story story1">
-            <img src="./src/assets/upload.png" alt="Foto de perfil" />
+            <img src="{% static 'plataforma/assets/upload.png'%}" alt="Foto de perfil" />
             <p>Postar Story</p>
           </div>
           <div class="story story2">
-            <img src="./src/assets/member-1.png" alt="Foto de perfil" />
+            <img src="{% static 'plataforma/assets/member-1.png'%}" alt="Foto de perfil" />
             <p>Alison</p>
           </div>
           <div class="story story3">
-            <img src="./src/assets/member-2.png" alt="Foto de perfil" />
+            <img src="{% static 'plataforma/assets/member-2.png'%}" alt="Foto de perfil" />
             <p>Jackson</p>
           </div>
           <div class="story story4">
-            <img src="./src/assets/member-3.png" alt="Foto de perfil" />
+            <img src="{% static 'plataforma/assets/member-3.png'%}" alt="Foto de perfil" />
             <p>Samona</p>
           </div>
           <div class="story story5">
-            <img src="./src/assets/member-4.png" alt="Foto de perfil" />
+            <img src="{% static 'plataforma/assets/member-4.png'%}" alt="Foto de perfil" />
             <p>Jhon Doe</p>
           </div>
         </div>
