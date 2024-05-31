@@ -1,9 +1,15 @@
 import os
 from pathlib import Path
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+import environ
 
 SECRET_KEY = 'django-insecure--$&=09i-)v=iadxh*^07pkj6mhqrj0%!w^3v(nv*iqeyfxw2mj'
+
+env = environ.Env()
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 DEBUG = True
 
@@ -50,17 +56,18 @@ TEMPLATES = [
     },
 ]
 
+
 WSGI_APPLICATION = 'code_connect.wsgi.application'
 
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'code-connect-db',
-        'USER': 'postgres',
-        'PASSWORD': 'admin',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'NAME': env('DB_NAME'),
+        'USER': env('DB_USER'),
+        'PASSWORD': env('DB_PASSWORD'),
+        'HOST': env('DB_HOST'),
+        'PORT': env('DB_PORT'),
     }
 }
 
