@@ -6,13 +6,13 @@
 />
 <link
   rel="stylesheet"
-  href="{% static 'plataforma/css/post/post_create.css' %}"
+  href="{% static 'plataforma/css/chat/chat_create.css' %}"
 />
-<title>Criar Postagens</title>
-<div class="post-create">
+<title>Criar Chat</title>
+<div class="chat-create">
   <h1 class="heading">
     Criar
-    <span>Postagens</span>
+    <span>Chat</span>
   </h1>
   <form method="post" enctype="multipart/form-data">
     {% csrf_token %} {{ form.as_p }}

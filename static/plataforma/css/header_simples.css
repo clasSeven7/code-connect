@@ -18,12 +18,8 @@ html {
   scroll-padding-top: 7rem;
 }
 
-body {
-  background-color: #eee;
-}
-
 .header {
-  background-color: #fff;
+  background-color: #1876f2;
   box-shadow: var(--box-shadow);
 }
 
@@ -38,17 +34,7 @@ body {
 }
 
 .header .logo img {
-  width: 3rem;
+  width: 20rem;
   color: var(--secondary-color);
   padding-right: 0.2rem;
-}
-
-.header .navbar a {
-  font-size: 1.7rem;
-  margin: 0 1rem;
-  color: var(--primary-color);
-}
-
-.header .navbar a:hover {
-  color: var(--secondary-color);
 }

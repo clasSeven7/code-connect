@@ -14,24 +14,24 @@ class PostCreateView(CreateView):
 
 class PostUpdateView(UpdateView):
     model = Post
-    template_name = 'post/post_update.html'
+    template_name = 'plataforma/post/post_update.html'
     fields = ['icon_user', 'name', 'data', 'hour', 'content', 'image_post']
     success_url = '/'
 
 
 class PostDeleteView(DeleteView):
     model = Post
-    template_name = 'post/post_delete.html'
+    template_name = 'plataforma/post/post_delete.html'
     success_url = '/'
 
 
 class PostDetailView(DetailView):
     model = Post
-    template_name = 'post/post_detail.html'
+    template_name = 'plataforma/post/post_detail.html'
     context_object_name = 'post'
 
 
 class PostListView(ListView):
     model = Post
-    template_name = 'post/post_list.html'
+    template_name = 'plataforma/post/post_list.html'
     context_object_name = 'posts'

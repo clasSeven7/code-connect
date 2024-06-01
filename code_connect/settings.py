@@ -3,13 +3,12 @@ from pathlib import Path
 
 import environ
 
-SECRET_KEY = 'django-insecure--$&=09i-)v=iadxh*^07pkj6mhqrj0%!w^3v(nv*iqeyfxw2mj'
-
-env = environ.Env()
-
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
+env = environ.Env()
+
+SECRET_KEY = 'django-insecure--$&=09i-)v=iadxh*^07pkj6mhqrj0%!w^3v(nv*iqeyfxw2mj'
 
 DEBUG = True
 
@@ -27,6 +26,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ] + APPS
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -58,7 +61,6 @@ TEMPLATES = [
 
 
 WSGI_APPLICATION = 'code_connect.wsgi.application'
-
 
 DATABASES = {
     'default': {
@@ -95,7 +97,6 @@ USE_I18N = True
 USE_TZ = True
 
 STATIC_URL = 'static/'
-
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
