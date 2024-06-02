@@ -1,0 +1,122 @@
+{% block content %} {% load static %}
+<nav>
+  <div class="nav-left">
+    <img
+      class="logo"
+      src="{% static 'plataforma/assets/logo-codeconnect-branca.png' %}"
+      alt="logo do CodeConnect"
+    />
+    <ul>
+      <li>
+        <img
+          src="{% static 'plataforma/assets/notification.png' %}"
+          alt="ícone de notificação"
+        />
+      </li>
+      <li>
+        <img
+          src="{% static 'plataforma/assets/inbox.png' %}"
+          alt="ícone de um cartão que representa o inbox"
+        />
+      </li>
+      <li>
+        <img
+          src="{% static 'plataforma/assets/video.png' %}"
+          alt="ícone de uma televisão que representa o video"
+        />
+      </li>
+    </ul>
+  </div>
+  <div class="nav-right">
+    <div class="search-box">
+      <img src="{% static 'plataforma/assets/search.png' %}" alt="ícone de uma lupa" />
+      <input type="text" placeholder="Procurar" />
+    </div>
+
+    <div class="nav-user-icon online" onclick="settingsMenuToggle()">
+      <img src="{% static 'plataforma/assets/profile-pic.png' %}" alt="ícone de usuário" />
+    </div>
+  </div>
+
+  <div class="settings-menu">
+    <div id="dark-btn">
+      <span></span>
+    </div>
+    <div class="settings-menu-inner">
+      <div class="user-profile">
+        <img src="{% static 'plataforma/assets/profile-pic.png' %}" alt="" />
+        <div>
+          <p>Jhon Nicholson</p>
+          <a href="#">Veja seu perfil</a>
+        </div>
+      </div>
+      <hr />
+      <div class="user-profile">
+        <img src="{% static 'plataforma/assets/feedback.png' %}" alt="" />
+        <div>
+          <p>Da o feedback</p>
+          <a href="#">Ajude-nos a melhorar o novo design</a>
+        </div>
+      </div>
+      <hr />
+
+      <div class="settings-links">
+        <img
+          src="{% static 'plataforma/assets/setting.png' %}"
+          class="settings-icon"
+          alt="Ícone de engrenagem"
+        />
+        <a href="#"
+          >Configurações & Privacidade
+          <img
+            src="{% static 'plataforma/assets/arrow.png' %}"
+            width="10px"
+            alt="Seta para a direita"
+        /></a>
+      </div>
+      <div class="settings-links">
+        <img
+          src="{% static 'plataforma/assets/help.png' %}"
+          class="settings-icon"
+          alt="Ícone de ajuda"
+        />
+        <a href="#"
+          >Ajuda & Suporte
+          <img
+            src="{% static 'plataforma/assets/arrow.png' %}"
+            width="10px"
+            alt="Seta para a direita"
+        /></a>
+      </div>
+      <div class="settings-links">
+        <img
+          src="{% static 'plataforma/assets/display.png' %}"
+          class="settings-icon"
+          alt="Ícone de display"
+        />
+        <a href="#"
+          >Tela & Acessibilidade
+          <img
+            src="{% static 'plataforma/assets/arrow.png' %}"
+            width="10px"
+            alt="Seta para a direita"
+        /></a>
+      </div>
+      <div class="settings-links">
+        <img
+          src="{% static 'plataforma/assets/logout.png' %}"
+          class="settings-icon"
+          alt="Ícone de uma porta aberta"
+        />
+        <a href="#"
+          >Sair
+          <img
+            src="{% static 'plataforma/assets/arrow.png' %}"
+            width="10px"
+            alt="Seta para a direita"
+        /></a>
+      </div>
+    </div>
+  </div>
+</nav>
+{% endblock %}
