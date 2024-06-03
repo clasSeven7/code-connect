@@ -10,8 +10,6 @@ from .class_views.post import (PostCreateView, PostDeleteView, PostDetailView,
 from .class_views.story import (StoryCreateView, StoryDeleteView,
                                 StoryDetailView, StoryListView,
                                 StoryUpdateView)
-from .class_views.user import (UserCreateView, UserDeleteView, UserDetailView,
-                               UserListView, UserUpdateView)
 from .views import home
 
 URLSPOSTS = [
@@ -46,15 +44,7 @@ URLSSTORY = [
     path('stories/<int:pk>/delete', StoryDeleteView.as_view(), name='story_delete'),
 ]
 
-URLSUSERS = [
-    path('users/', UserListView.as_view(), name='user_list'),
-    path('users/create', UserCreateView.as_view(), name='user_create'),
-    path('users/<int:pk>/', UserUpdateView.as_view(), name='user_detail'),
-    path('users/<int:pk>/update', UserDetailView.as_view(), name='user_update'),
-    path('users/<int:pk>/delete', UserDeleteView.as_view(), name='user_delete'),
-]
-
 
 urlpatterns = [
     path('', home, name='home')
-] + URLSPOSTS + URLSCHAT + URLSEVENTS + URLSUSERS + URLSSTORY
+] + URLSPOSTS + URLSCHAT + URLSEVENTS + URLSSTORY
