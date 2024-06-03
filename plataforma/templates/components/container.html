@@ -63,29 +63,27 @@
     </div>
   </div>
   <div class="main-content">
-    <div class="story-gallery">
-      <div class="story story1">
-        <img src="{% static 'plataforma/assets/upload.png'%}" alt="Foto de perfil" />
-        <p>Postar Story</p>
+    
+    <div class="main-content">
+      <div class="story-gallery">
+          <div class="story story1">
+              <img src="{% static 'plataforma/assets/upload.png' %}" alt="Foto de perfil" />
+              <p>Postar Story</p>
+          </div>
+          {% for story in story %}
+          <div class="story" style="background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.5)), url('{{ story.image.url }}');">
+              {% if story.image %}
+                  <img src="{{ story.image.url }}" alt="Foto de perfil" />
+              {% else %}
+                  <img src="{% static 'plataforma/assets/default.png' %}" alt="Foto de perfil" />
+              {% endif %}
+              <p>{{ story.name }}</p>
+          </div>
+          {% endfor %}
       </div>
-      <div class="story story2">
-        <img src="{% static 'plataforma/assets/member-1.png'%}" alt="Foto de perfil" />
-        <p>Alison</p>
-      </div>
-      <div class="story story3">
-        <img src="{% static 'plataforma/assets/member-2.png'%}" alt="Foto de perfil" />
-        <p>Jackson</p>
-      </div>
-      <div class="story story4">
-        <img src="{% static 'plataforma/assets/member-3.png'%}" alt="Foto de perfil" />
-        <p>Samona</p>
-      </div>
-      <div class="story story5">
-        <img src="{% static 'plataforma/assets/member-4.png'%}" alt="Foto de perfil" />
-        <p>Jhon Doe</p>
-      </div>
-    </div>
-
+  </div>
+  
+  
     <div class="write-post-container">
       <div class="user-profile">
         <img src="{% static 'plataforma/assets/profile-pic.png' %}" alt="Foto de perfil do usuario" />
@@ -124,194 +122,53 @@
       </div>
     </div>
 
-    <div class="post-container">
-      <div class="post-row">
-        <div class="user-profile">
-          <img src="{% static 'plataforma/assets/profile-pic.png'%}" alt="Foto de perfil do usuario" />
-          <div>
-            <p>Jhon Nicholson</p>
-            <span>Junho 24 2024, 13:40 pm</span>
+    <div class="main-content">
+      {% for post in post %}
+      <div class="post-container">
+          <div class="post-row">
+              <div class="user-profile">
+                  {% if post.icon_user %}
+                      <img src="{{ post.icon_user.url }}" alt="Foto de perfil do usuario" />
+                  {% else %}
+                      <img src="{% static 'plataforma/assets/default-profile-pic.png' %}" alt="Foto de perfil padrão" />
+                  {% endif %}
+                  <div>
+                      <p>{{ post.name }}</p>
+                      <span>{{ post.data|date:"F d, Y" }}, {{ post.hour|time:"H:i a" }}</span>
+                  </div>
+              </div>
+              <a href="#"><i class="fas fa-ellipsis-v"></i></a>
           </div>
-        </div>
-        <a href="#"><i class="fas fa-ellipsis-v"></i></a>
+  
+          <p class="post-text">
+              {{ post.content }}
+          </p>
+          {% if post.image_post %}
+          <img class="post-img" src="{{ post.image_post.url }}" alt="Imagem do post" />
+          {% endif %}
+  
+          <div class="post-row">
+              <div class="activity-icons">
+                  <div>
+                      <img src="{% static 'plataforma/assets/like-blue.png' %}" alt="Joinha azul" /> 120
+                  </div>
+                  <div>
+                      <img src="{% static 'plataforma/assets/comments.png' %}" alt="2 balões branco" /> 45
+                  </div>
+                  <div>
+                      <img src="{% static 'plataforma/assets/share.png' %}" alt="Seta pro lado" /> 20
+                  </div>
+              </div>
+              <div class="post-profile-icon">
+                <img src="{{ post.icon_user.url }}" alt="Foto de perfil do usuario" />
+                  <i class="fas fa-caret-down"></i>
+              </div>
+          </div>
       </div>
-
-      <p class="post-text">
-        Inscreva-se <span>@classeven7</span> 👨‍💻 A "clasSeven" está
-        transformando o código em soluções inovadoras | 💡 Impulsionando o
-        seu sucesso digital | 🚀 Construindo um futuro tecnológico de
-        excelência | 📦 Viciado em Aprendizado e Desenvolvimento.
-        <a href="#">#classeven7</a>
-        <a href="#">#canaldoyoutube</a>
-      </p>
-      <img
-        class="post-img"
-        src="{% static 'plataforma/assets/feed-image-1.png' %}"
-        alt="Pessoas conversando em um escritório"
-      />
-
-      <div class="post-row">
-        <div class="activity-icons">
-          <div>
-            <img src="{% static 'plataforma/assets/like-blue.png' %}" alt="Joinha azul" />
-            120
-          </div>
-          <div>
-            <img src="{% static 'plataforma/assets/comments.png' %}" alt="2 balões branco" />
-            45
-          </div>
-          <div>
-            <img src="{% static 'plataforma/assets/share.png' %}" alt="Seta pro lado" />
-            20
-          </div>
-        </div>
-        <div class="post-profile-icon">
-          <img src="{% static 'plataforma/assets/profile-pic.png' %}" alt="Foto de perfil do usuario" />
-          <i class="fas fa-caret-down"></i>
-        </div>
-      </div>
-    </div>
-    <div class="post-container">
-      <div class="post-row">
-        <div class="user-profile">
-          <img src="{% static 'plataforma/assets/profile-pic.png' %}" alt="" />
-          <div>
-            <p>Jhon Nicholson</p>
-            <span>Junho 24 2024, 13:40 pm</span>
-          </div>
-        </div>
-        <a href="#"><i class="fas fa-ellipsis-v"></i></a>
-      </div>
-
-      <p class="post-text">
-        Inscreva-se <span>@classeven7</span> 👨‍💻 A "clasSeven" está
-        transformando o código em soluções inovadoras | 💡 Impulsionando o
-        seu sucesso digital | 🚀 Construindo um futuro tecnológico de
-        excelência | 📦 Viciado em Aprendizado e Desenvolvimento.
-        <a href="#">#classeven7</a>
-        <a href="#">#canaldoyoutube</a>
-      </p>
-      <img
-        class="post-img"
-        src="{% static 'plataforma/assets/feed-image-2.png' %}"
-        alt="Pessoas conversando em um escritório"
-      />
-
-      <div class="post-row">
-        <div class="activity-icons">
-          <div>
-            <img src="{% static 'plataforma/assets/like-blue.png' %}" alt="Joinha azul" />
-            120
-          </div>
-          <div>
-            <img src="{% static 'plataforma/assets/comments.png' %}" alt="2 balões branco" />
-            45
-          </div>
-          <div>
-            <img src="{% static 'plataforma/assets/share.png' %}" alt="Seta pro lado" />
-            20
-          </div>
-        </div>
-        <div class="post-profile-icon">
-          <img src="{% static 'plataforma/assets/profile-pic.png' %}" alt="foto de perfil do usuário" />
-          <i class="fas fa-caret-down"></i>
-        </div>
-      </div>
-    </div>
-    <div class="post-container">
-      <div class="post-row">
-        <div class="user-profile">
-          <img src="{% static 'plataforma/assets/profile-pic.png' %}" alt="foto de perfil do usuário" />
-          <div>
-            <p>Jhon Nicholson</p>
-            <span>Junho 24 2024, 13:40 pm</span>
-          </div>
-        </div>
-        <a href="#"><i class="fas fa-ellipsis-v"></i></a>
-      </div>
-
-      <p class="post-text">
-        Inscreva-se <span>@classeven7</span> 👨‍💻 A "clasSeven" está
-        transformando o código em soluções inovadoras | 💡 Impulsionando o
-        seu sucesso digital | 🚀 Construindo um futuro tecnológico de
-        excelência | 📦 Viciado em Aprendizado e Desenvolvimento.
-        <a href="#">#classeven7</a>
-        <a href="#">#canaldoyoutube</a>
-      </p>
-      <img
-        class="post-img"
-        src="{% static 'plataforma/assets/feed-image-3.png' %}"
-        alt="Pessoas conversando em um escritório"
-      />
-
-      <div class="post-row">
-        <div class="activity-icons">
-          <div>
-            <img src="{% static 'plataforma/assets/like-blue.png' %}" alt="Joinha azul" />
-            120
-          </div>
-          <div>
-            <img src="{% static 'plataforma/assets/comments.png' %}" alt="2 balões branco" />
-            45
-          </div>
-          <div>
-            <img src="{% static 'plataforma/assets/share.png' %}" alt="Seta pro lado" />
-            20
-          </div>
-        </div>
-        <div class="post-profile-icon">
-          <img src="{% static 'plataforma/assets/profile-pic.png' %}" alt="Foto de perfil do usuário" />
-          <i class="fas fa-caret-down"></i>
-        </div>
-      </div>
-    </div>
-    <div class="post-container">
-      <div class="post-row">
-        <div class="user-profile">
-          <img src="{% static 'plataforma/assets/profile-pic.png' %}" alt="Foto de perfil do usuário" />
-          <div>
-            <p>Jhon Nicholson</p>
-            <span>Junho 24 2024, 13:40 pm</span>
-          </div>
-        </div>
-        <a href="#"><i class="fas fa-ellipsis-v"></i></a>
-      </div>
-
-      <p class="post-text">
-        Inscreva-se <span>@classeven7</span> 👨‍💻 A "clasSeven" está
-        transformando o código em soluções inovadoras | 💡 Impulsionando o
-        seu sucesso digital | 🚀 Construindo um futuro tecnológico de
-        excelência | 📦 Viciado em Aprendizado e Desenvolvimento.
-        <a href="#">#classeven7</a>
-        <a href="#">#canaldoyoutube</a>
-      </p>
-      <img
-        class="post-img"
-        src="{% static 'plataforma/assets/feed-image-4.png' %}"
-        alt="Pessoas conversando em um escritório"
-      />
-
-      <div class="post-row">
-        <div class="activity-icons">
-          <div>
-            <img src="{% static 'plataforma/assets/like.png' %}" alt="Joinha azul" />
-            100
-          </div>
-          <div>
-            <img src="{% static 'plataforma/assets/comments.png' %}" alt="2 balões branco" />
-            05
-          </div>
-          <div>
-            <img src="{% static 'plataforma/assets/share.png' %}" alt="Seta pro lado" />
-            27
-          </div>
-        </div>
-        <div class="post-profile-icon">
-          <img src="{% static 'plataforma/assets/profile-pic.png' %}" alt="Foto de perfil do usuário" />
-          <i class="fas fa-caret-down"></i>
-        </div>
-      </div>
-    </div>
+      {% endfor %}
+  </div>
+  
+  
 
     <button class="load-more-btn" type="button">Carregue mais</button>
   </div>
@@ -358,28 +215,21 @@
     <div class="sidebar-title">
       <h3>Conversas</h3>
       <a href="#">Ocultar bate-papo</a>
-    </div>
-
-    <div class="online-list">
+  </div>
+  
+  {% for chat in chats %}
+  <div class="online-list">
       <div class="online">
-        <img src="{% static 'plataforma/assets/member-1.png' %}" alt="Foto de perfil" />
+          {% if chat.icon_user %}
+          <img src="{{ chat.icon_user.url }}" alt="Foto de perfil" />
+          {% else %}
+          <img src="{% static 'plataforma/assets/default-profile.png' %}" alt="Foto de perfil padrão" />
+          {% endif %}
       </div>
-      <p>Alison Mina</p>
-    </div>
-
-    <div class="online-list">
-      <div class="online">
-        <img src="{% static 'plataforma/assets/member-2.png' %}" alt="Foto de perfil" />
-      </div>
-      <p>Jackson Aston</p>
-    </div>
-
-    <div class="online-list">
-      <div class="online">
-        <img src="{% static 'plataforma/assets/member-3.png' %}" alt="Foto de perfil" />
-      </div>
-      <p>Samona Rose</p>
-    </div>
+      <p>{{ chat.name }}</p>
+  </div>
+  {% endfor %}
+  
   </div>
 </div>
 {% endblock %}
