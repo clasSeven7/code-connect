@@ -14,7 +14,7 @@
     <span>Postagem</span>
   </h1>
   <form method="post" enctype="multipart/form-data">
-    {% csrf_token %} {{ form_post.as_p }}
+    {% csrf_token %} {{ form.as_p }}
     <button type="submit">Salvar Alterações</button>
   </form>
   </div>

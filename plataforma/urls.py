@@ -1,5 +1,7 @@
 from django.urls import path
 
+from .class_views.auth import (CustomLoginView, CustomLogoutView,
+                               CustomRegisterView)
 from .class_views.chat import (ChatCreateView, ChatDeleteView, ChatDetailView,
                                ChatListView, ChatUpdateView)
 from .class_views.event import (EventCreateView, EventDeleteView,
@@ -44,7 +46,13 @@ URLSSTORY = [
     path('stories/<int:pk>/delete', StoryDeleteView.as_view(), name='story_delete'),
 ]
 
+URLSAUTH = [
+    path('login/', CustomLoginView.as_view(), name='login'),
+    path('register/', CustomRegisterView.as_view(), name='register'),
+    path('logout/', CustomLogoutView.as_view(), name='logout'),
+]
+
 
 urlpatterns = [
     path('', home, name='home')
-] + URLSPOSTS + URLSCHAT + URLSEVENTS + URLSSTORY
+] + URLSPOSTS + URLSCHAT + URLSEVENTS + URLSSTORY + URLSAUTH
