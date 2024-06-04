@@ -1,0 +1,26 @@
+{% include "components/header_simples.html" %} {% load static %}
+<link 
+  rel="stylesheet" 
+  href="{% static 'plataforma/css/header_simples.css' %}" 
+/>
+<link
+  rel="stylesheet"
+  href="{% static 'plataforma/css/story/story_detail.css' %}"
+/>
+<title>Detalhes - {{ story.name }}</title>
+<div class="story-detail">
+  <h1 class="heading">
+    Detalhes
+    <span>story</span>
+  </h1>
+  <ul>
+    <li><strong>Usuário:</strong> {{ story.name }}</li>
+    {% if object.image %}
+    <img
+      style="width: 300px"
+      src="{{ object.image.url }}"
+      alt="{{ object.name }}"
+    />
+    {% endif %}
+  </ul>
+</div>

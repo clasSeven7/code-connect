@@ -1,0 +1,44 @@
+{% include "components/header_simples.html" %} {% load static %}
+<link 
+  rel="stylesheet" 
+  href="{% static 'plataforma/css/header_simples.css' %}" 
+/>
+<link
+  rel="stylesheet"
+  href="{% static 'plataforma/css/event/event_list.css' %}"
+/>
+<title>Listar eventagem</title>
+<div class="event-list">
+  <h1 class="heading">
+    Listas
+    <span>Eventos</span>
+  </h1>
+  <form method="GET">
+    <input type="text" name="ti" placeholder="Pesquisar..." />
+    <select name="orderby">
+      <option value="pub_date">Data de publicação</option>
+      <option value="title">Nome do usuário</option>
+      <option value="user">Hora da publicação</option>
+    </select>
+    <button type="submit">Pesquisar</button>
+  </form>
+</div>
+
+<div class="event-list">
+  <ul>
+    {% for event in events %}
+    <li class="resource-item">
+     
+      <span class="resource-item-name">{{ event.name }}</span>
+      
+      <a href="{% url 'event_detail' event.pk %}">Detalhes</a>
+      <a href="{% url 'event_update' event.pk %}">Editar</a>
+      <a href="{% url 'event_delete' event.pk %}">Excluir</a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% block pagination %}
+{% include "components/pagination.html" %}
+{% endblock %}

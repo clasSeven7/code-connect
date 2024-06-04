@@ -1,0 +1,126 @@
+:root {
+    --box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+    --border: 0.2rem solid rgba(0, 0, 0, 0.1);
+    --outline: 0.1rem solid rgba(0, 0, 0, 0.1);
+    --outline-hover: 0.2rem solid #1876f2;
+  }
+  
+  * {
+    font-family: 'poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    transition: all 0.2s linear;
+  }
+  
+  html {
+    font-size: 62.5%; /* 1rem = 10px */
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+  }
+  
+  body {
+    background: #f7f7f7;
+  }
+  
+  .heading {
+    font-size: 2rem;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .heading span {
+    background: #1876f2;
+    color: #fff;
+    display: inline-block;
+    padding: 0.5rem 3rem;
+    clip-path: polygon(100% 0%, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%);
+  }
+  
+  .event-update {
+    background: #fff;
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+    margin: 2rem auto;
+    padding: 2rem;
+    width: 50%;
+  }
+  
+  .event-update h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .event-update form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .event-update form p:nth-child(2),
+  .event-update form p:nth-child(7) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .event-update form p:nth-child(3),
+  .event-update form p:nth-child(4),
+  .event-update form p:nth-child(5),
+  .event-update form p:nth-child(6) {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .event-update form input {
+    background: #f9f9f9;
+    border: var(--outline);
+    border-radius: 0.5rem;
+    font-size: 1.7rem;
+    margin: 1rem 0;
+    padding: 1rem;
+  }
+  
+  .event-update form textarea {
+    background: #f9f9f9;
+    border: var(--outline);
+    border-radius: 0.5rem;
+    font-size: 1.7rem;
+    margin: 1rem 0;
+    padding: 1rem;
+  }
+  
+  .event-update form input:focus {
+    border: var(--outline-hover);
+  }
+  
+  .event-update form button {
+    background: var(--primary-color);
+    border-radius: 0.5rem;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.7rem;
+    margin: 1rem 0;
+    padding: 1rem;
+  }
+  
+  .event-update form button:hover {
+    background: var(--secondary-color);
+  }
+  
+  .event-update form p label {
+    font-size: 1.7rem;
+    margin: 1rem 0;
+  }
+  
+  .event-update form p input {
+    margin-right: 1rem;
+  }
+  
+  .event-update form button:hover {
+    background: var(--secondary-color);
+  }
+  

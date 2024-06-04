@@ -1,0 +1,29 @@
+{% include "components/header_simples.html" %} {% load static %}
+<link rel="stylesheet" href="{% static 'plataforma/css/header_simples.css' %}" />
+<link
+  rel="stylesheet"
+  href="{% static 'plataforma/css/event/event_delete.css' %}"
+/>
+<title>Deletar - {{ event.name }}</title>
+<div class="event-delete">
+  <h1 class="heading">
+    Deletar
+    <span>Evento</span>
+  </h1>
+  <form method="event">
+    {% csrf_token %}
+    <p>
+      Você tem certeza que deseja deletar a Evento de
+      <strong>"{{ event.name }}"</strong>?
+    </p>
+    {% if object.image_event %}
+    <img
+      style="width: 100px"
+      src="{{ object.image_event.url }}"
+      alt="{{ object.name }}"
+    />
+    {% endif %}
+   
+    <button type="submit">Deletar</button>
+  </form>
+</div>

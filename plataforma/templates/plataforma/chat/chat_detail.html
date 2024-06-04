@@ -1,0 +1,28 @@
+{% include "components/header_simples.html" %} {% load static %}
+<link 
+  rel="stylesheet" 
+  href="{% static 'plataforma/css/header_simples.css' %}" 
+/>
+<link
+  rel="stylesheet"
+  href="{% static 'plataforma/css/chat/chat_detail.css' %}"
+/>
+<title>Detalhes - {{ chat.name }}</title>
+<div class="chat-detail">
+  <h1 class="heading">
+    Detalhes
+    <span>chat</span>
+  </h1>
+  <ul>
+    <li><strong>Usuário:</strong> {{ chat.name }}</li>
+    
+ 
+    {% if object.icon_user %}
+    <img
+      style="width: 300px"
+      src="{{ object.icon_user.url }}"
+      alt="{{ object.name }}"
+    />
+    {% endif %}
+  </ul>
+</div>

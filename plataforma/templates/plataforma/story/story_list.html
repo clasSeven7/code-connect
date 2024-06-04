@@ -1,0 +1,51 @@
+{% include "components/header_simples.html" %} {% load static %}
+<link 
+  rel="stylesheet" 
+  href="{% static 'plataforma/css/header_simples.css' %}" 
+/>
+<link
+  rel="stylesheet"
+  href="{% static 'plataforma/css/story/story_list.css' %}"
+/>
+<title>Listar storyagem</title>
+<div class="story-list">
+  <h1 class="heading">
+    Listas
+    <span>storyagens</span>
+  </h1>
+  <form method="GET">
+    <input type="text" name="ti" placeholder="Pesquisar..." />
+    <select name="orderby">
+      <option value="pub_date">Data de publicação</option>
+      <option value="title">Nome do usuário</option>
+      <option value="user">Hora da publicação</option>
+    </select>
+    <button type="submit">Pesquisar</button>
+  </form>
+</div>
+
+<div class="story-list">
+  <ul>
+    {% for story in storys %}
+    <li class="resource-item">
+      <span class="resource-item-icon">
+        <img
+          style="width: 100px"
+          src="{{ story.image.url }}"
+          alt="{{ story.name }}"
+        />
+      </span>
+      <span class="resource-item-name">{{ story.name }}</span>
+      <span class="resource-item-image">
+      </span>
+      <a href="{% url 'story_detail' story.pk %}">Detalhes</a>
+      <a href="{% url 'story_update' story.pk %}">Editar</a>
+      <a href="{% url 'story_delete' story.pk %}">Excluir</a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% block pagination %}
+{% include "components/pagination.html" %}
+{% endblock %}

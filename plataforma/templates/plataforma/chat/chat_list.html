@@ -1,0 +1,52 @@
+{% include "components/header_simples.html" %} {% load static %}
+<link 
+  rel="stylesheet" 
+  href="{% static 'plataforma/css/header_simples.css' %}" 
+/>
+<link
+  rel="stylesheet"
+  href="{% static 'plataforma/css/chat/chat_list.css' %}"
+/>
+<title>Listar chatagem</title>
+<div class="chat-list">
+  <h1 class="heading">
+    Listas
+    <span>chat</span>
+  </h1>
+  <form method="GET">
+    <input type="text" name="ti" placeholder="Pesquisar..." />
+    <select name="orderby">
+      <option value="pub_date">Data de publicação</option>
+      <option value="title">Nome do usuário</option>
+      <option value="user">Hora da publicação</option>
+    </select>
+    <button type="submit">Pesquisar</button>
+  </form>
+</div>
+
+<div class="chat-list">
+  <ul>
+    {% for chat in chats %}
+    <li class="resource-item">
+      <span class="resource-item-icon">
+        <img
+          style="width: 100px"
+          src="{{ chat.icon_user.url }}"
+          alt="{{ chat.name }}"
+        />
+      </span>
+      <span class="resource-item-name">{{ chat.name }}</span>
+      <span class="resource-item-image">
+        
+      </span>
+      <a href="{% url 'chat_detail' chat.pk %}">Detalhes</a>
+      <a href="{% url 'chat_update' chat.pk %}">Editar</a>
+      <a href="{% url 'chat_delete' chat.pk %}">Excluir</a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% block pagination %}
+{% include "components/pagination.html" %}
+{% endblock %}

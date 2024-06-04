@@ -1,0 +1,29 @@
+{% include "components/header_simples.html" %} {% load static %}
+<link rel="stylesheet" href="{% static 'plataforma/css/header_simples.css' %}" />
+<link
+  rel="stylesheet"
+  href="{% static 'plataforma/css/story/story_delete.css' %}"
+/>
+<title>Deletar - {{ story.name }}</title>
+<div class="story-delete">
+  <h1 class="heading">
+    Deletar
+    <span>story</span>
+  </h1>
+  <form method="story">
+    {% csrf_token %}
+    <p>
+      Você tem certeza que deseja deletar a story de
+      <strong>"{{ story.name }}"</strong>?
+    </p>
+    {% if object.image_story %}
+    <img
+      style="width: 100px"
+      src="{{ object.image.url }}"
+      alt="{{ object.name }}"
+    />
+    {% endif %}
+    
+    <button type="submit">Deletar</button>
+  </form>
+</div>

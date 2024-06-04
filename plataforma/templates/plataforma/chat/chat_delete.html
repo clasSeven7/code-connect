@@ -1,0 +1,29 @@
+{% include "components/header_simples.html" %} {% load static %}
+<link rel="stylesheet" href="{% static 'plataforma/css/header_simples.css' %}" />
+<link
+  rel="stylesheet"
+  href="{% static 'plataforma/css/chat/chat_delete.css' %}"
+/>
+<title>Deletar - {{ post.name }}</title>
+<div class="chat-delete">
+  <h1 class="heading">
+    Deletar
+    <span>Chat</span>
+  </h1>
+  <form method="post">
+    {% csrf_token %}
+    <p>
+      Você tem certeza que deseja deletar o chat de
+      <strong>"{{ chat.name }}"</strong>?
+    </p>
+    {% if object.image_chat %}
+    <img
+      style="width: 100px"
+      src="{{ object.icon_user.url }}"
+      alt="{{ object.name }}"
+    />
+    {% endif %}
+    
+    <button type="submit">Deletar</button>
+  </form>
+</div>

@@ -1,0 +1,88 @@
+:root {
+    --box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+    --border: 0.2rem solid rgba(0, 0, 0, 0.1);
+    --outline: 0.1rem solid rgba(0, 0, 0, 0.1);
+    --outline-hover: 0.2rem solid #1876f2;
+  }
+  
+  * {
+    font-family: 'poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    transition: all 0.2s linear;
+  }
+  
+  html {
+    font-size: 62.5%; /* 1rem = 10px */
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+  }
+  
+  body {
+    background: #f7f7f7;
+  }
+  
+  .heading {
+    font-size: 2rem;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .heading span {
+    background: #1876f2;
+    color: #fff;
+    display: inline-block;
+    padding: 0.5rem 3rem;
+    clip-path: polygon(100% 0%, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%);
+  }
+  
+  .story-detail {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    background: #fff;
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+    margin: 2rem auto;
+    padding: 2rem;
+    width: 30%;
+  }
+  
+  .story-detail h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .story-detail ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    list-style: none;
+    padding: 1rem;
+  }
+  
+  .story-detail ul li {
+    font-size: 1.7rem;
+    padding: 1rem;
+  }
+  
+  .story-detail img {
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+  
+  .story-detail p {
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+  }
+  
+  .resource-delete form button:hover {
+    background: var(--secondary-color);
+  }
+  

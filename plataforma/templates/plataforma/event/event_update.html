@@ -1,0 +1,21 @@
+{% include "components/header_simples.html" %} {% load static %}
+<link 
+  rel="stylesheet" 
+  href="{% static 'plataforma/css/header_simples.css' %}" 
+/>
+<link
+  rel="stylesheet"
+  href="{% static 'plataforma/css/event/event_update.css' %}"
+/>
+<title>Atualizar - {{ event.name }}</title>
+<div class="event-update">
+  <h1 class="heading">
+    Atualizar
+    <span>Evento</span>
+  </h1>
+  <form method="event" enctype="multipart/form-data">
+    {% csrf_token %} {{ form.as_p }}
+    <button type="submit">Salvar Alterações</button>
+  </form>
+  </div>
+</div>

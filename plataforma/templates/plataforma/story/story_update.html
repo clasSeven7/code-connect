@@ -1,0 +1,21 @@
+{% include "components/header_simples.html" %} {% load static %}
+<link 
+  rel="stylesheet" 
+  href="{% static 'plataforma/css/header_simples.css' %}" 
+/>
+<link
+  rel="stylesheet"
+  href="{% static 'plataforma/css/story/story_update.css' %}"
+/>
+<title>Atualizar - {{ story.name }}</title>
+<div class="story-update">
+  <h1 class="heading">
+    Atualizar
+    <span>story</span>
+  </h1>
+  <form method="story" enctype="multipart/form-data">
+    {% csrf_token %} {{ form.as_p }}
+    <button type="submit">Salvar Alterações</button>
+  </form>
+  </div>
+</div>
