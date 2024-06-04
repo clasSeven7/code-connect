@@ -1,0 +1,36 @@
+{% include "components/header_simples.html" %} {% load static %}
+<link rel="stylesheet" href="{% static 'plataforma/css/header_simples.css' %}" />
+<link
+  rel="stylesheet"
+  href="{% static 'plataforma/css/post/post_delete.css' %}"
+/>
+<title>Deletar - {{ post.name }}</title>
+<div class="post-delete">
+  <h1 class="heading">
+    Deletar
+    <span>Postagem</span>
+  </h1>
+  <form method="post">
+    {% csrf_token %}
+    <p>
+      Você tem certeza que deseja deletar a postagem de
+      <strong>"{{ post.name }}"</strong>?
+    </p>
+    {% if object.image_post %}
+    <img
+      style="width: 100px"
+      src="{{ object.image_post.url }}"
+      alt="{{ object.name }}"
+    />
+    {% endif %}
+    <p>
+      <strong>Data:</strong> {{ post.data }}
+    </p>
+    <p>
+      <strong>Hora:</strong> {{ post.hour }}
+    <p>
+      <strong>Descrição:</strong> {{ post.content }}
+    </p>
+    <button type="submit">Deletar</button>
+  </form>
+</div>

@@ -43,7 +43,7 @@ body {
   clip-path: polygon(100% 0%, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%);
 }
 
-.story-create {
+.post-list {
   background: #fff;
   box-shadow: var(--box-shadow);
   border: var(--border);
@@ -52,23 +52,14 @@ body {
   width: 50%;
 }
 
-.story-create h2 {
-  font-size: 2.2rem;
-  margin-bottom: 1rem;
-}
-
-.story-create form {
-  display: flex;
-  flex-direction: column;
-}
-
-.story-create form p {
+.post-list form {
   display: grid;
   grid-template-columns: 1fr;
+  gap: 2rem;
 }
 
-.story-create form input {
-  background: #d5e7ff;
+.post-list form input {
+  background: #f9f9f9;
   border: var(--outline);
   border-radius: 0.5rem;
   font-size: 1.7rem;
@@ -76,40 +67,98 @@ body {
   padding: 1rem;
 }
 
-.story-create form textarea {
-  background: #d5e7ff;
-  border: var(--outline);
-  border-radius: 0.5rem;
-  font-size: 1.7rem;
-  margin: 1rem 0;
-  padding: 1rem;
-}
-
-.story-create form input:focus {
+.post-list form input:focus {
   border: var(--outline-hover);
 }
 
-.story-create form button {
-  background: #1876f2;
+.post-list form select {
+  background: #f9f9f9;
+  border: var(--outline);
+  border-radius: 0.5rem;
+  font-size: 1.7rem;
+  margin: 1rem 0;
+  padding: 1rem;
+}
+
+.post-list form select:focus {
+  border: var(--outline-hover);
+}
+
+.post-list form button {
+  background: var(--primary-color);
   border-radius: 0.5rem;
   color: #fff;
   cursor: pointer;
   font-size: 1.7rem;
   margin: 1rem 0;
   padding: 1rem;
-  font-weight: 700;
 }
 
-.story-create form button:hover {
-  background: #0c438b;
-  color: #fff;
+.post-list ul {
+  list-style: none;
+  margin-top: 2rem;
+  padding: 0;
 }
 
-.story-create form p label {
-  font-size: 1.7rem;
+.post-list ul li {
+  background: #f9f9f9;
+  border: var(--outline);
+  border-radius: 0.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   margin: 1rem 0;
+  padding: 1rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-.story-create form p input {
-  margin-right: 1rem;
+.post-list ul li span {
+  display: block;
+  font-size: 1.7rem;
+  margin: 0.5rem 0;
+}
+
+.post-list ul li button {
+  background: var(--secondary-color);
+  border-radius: 0.5rem;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.7rem;
+  padding: 1rem;
+}
+
+.post-list ul li button:hover {
+  background: var(--primary-color);
+}
+
+.post-list ul li a {
+  color: var(--primary-color);
+  font-size: 1.7rem;
+  text-decoration: none;
+}
+
+.post-list ul li a:hover {
+  text-decoration: underline;
+}
+
+.post-list ul li p {
+  font-size: 1.7rem;
+  margin: 0.5rem 0;
+}
+
+.post-list ul li img {
+  border-radius: 0.5rem;
+  height: 10rem;
+  width: 10rem;
+}
+
+.post-list ul li img:hover {
+  cursor: pointer;
+}
+
+.post-list ul li img {
+  border-radius: 0.5rem;
+  height: 10rem;
+  width: 10rem;
 }

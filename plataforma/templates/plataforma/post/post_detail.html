@@ -1,0 +1,29 @@
+{% include "components/header_simples.html" %} {% load static %}
+<link 
+  rel="stylesheet" 
+  href="{% static 'plataforma/css/header_simples.css' %}" 
+/>
+<link
+  rel="stylesheet"
+  href="{% static 'plataforma/css/post/post_detail.css' %}"
+/>
+<title>Detalhes - {{ post.name }}</title>
+<div class="post-detail">
+  <h1 class="heading">
+    Detalhes
+    <span>Postagem</span>
+  </h1>
+  <ul>
+    <li><strong>Usuário:</strong> {{ post.name }}</li>
+    <li><strong>Data:</strong> {{ post.data }}</li>
+    <li><strong>Hora:</strong> {{ post.hour }}</li>
+    <li><strong>Descrição:</strong> {{ post.content }}</li>
+    {% if object.image_post %}
+    <img
+      style="width: 300px"
+      src="{{ object.image_post.url }}"
+      alt="{{ object.name }}"
+    />
+    {% endif %}
+  </ul>
+</div>

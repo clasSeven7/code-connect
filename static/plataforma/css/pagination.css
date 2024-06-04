@@ -1,0 +1,67 @@
+:root {
+  --box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+  --border: 0.2rem solid rgba(0, 0, 0, 0.1);
+  --outline: 0.1rem solid rgba(0, 0, 0, 0.1);
+  --outline-hover: 0.2rem solid #1876f2;
+}
+
+* {
+  font-family: 'poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  transition: all 0.2s linear;
+}
+
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 7rem;
+}
+
+body {
+  background: #f7f7f7;
+}
+
+.pagination {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.pagination li {
+  display: inline-block;
+  margin: 0 0.5rem;
+}
+
+.pagination li.active span {
+  background: #1876f2;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+}
+
+.pagination li a,
+.pagination li span {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  color: #1876f2;
+  border: 0.1rem solid #1876f2;
+  text-decoration: none;
+  border-radius: 0.5rem;
+}
+
+.pagination li a:hover {
+  background-color: #1876f2;
+  color: #fff;
+}
+
+.pagination li:first-child a,
+.pagination li:last-child a {
+  margin: 0;
+}

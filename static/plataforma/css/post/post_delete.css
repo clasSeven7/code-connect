@@ -1,5 +1,3 @@
-@charset "UTF-8";
-
 :root {
   --box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
   --border: 0.2rem solid rgba(0, 0, 0, 0.1);
@@ -43,53 +41,48 @@ body {
   clip-path: polygon(100% 0%, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%);
 }
 
-.story-create {
+.post-delete {
   background: #fff;
   box-shadow: var(--box-shadow);
   border: var(--border);
   margin: 2rem auto;
   padding: 2rem;
-  width: 50%;
+  width: 30%;
 }
 
-.story-create h2 {
+.post-delete h2 {
   font-size: 2.2rem;
   margin-bottom: 1rem;
 }
 
-.story-create form {
-  display: flex;
-  flex-direction: column;
+.post-delete form p {
+  font-size: 1.7rem;
+  align-items: center;
 }
 
-.story-create form p {
+.post-delete form input {
+  background: #f9f9f9;
+  border: var(--outline);
+  border-radius: 0.5rem;
+  font-size: 1.7rem;
+  margin: 1rem 0;
+  padding: 1rem;
+}
+
+.post-delete form {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 2fr auto;
 }
 
-.story-create form input {
-  background: #d5e7ff;
-  border: var(--outline);
-  border-radius: 0.5rem;
-  font-size: 1.7rem;
-  margin: 1rem 0;
-  padding: 1rem;
-}
-
-.story-create form textarea {
-  background: #d5e7ff;
-  border: var(--outline);
-  border-radius: 0.5rem;
-  font-size: 1.7rem;
-  margin: 1rem 0;
-  padding: 1rem;
-}
-
-.story-create form input:focus {
+.post-delete form input:focus {
   border: var(--outline-hover);
 }
 
-.story-create form button {
+.post-delete form button:hover {
+  background: var(--secondary-color);
+}
+
+.post-delete form button {
   background: #1876f2;
   border-radius: 0.5rem;
   color: #fff;
@@ -97,19 +90,10 @@ body {
   font-size: 1.7rem;
   margin: 1rem 0;
   padding: 1rem;
-  font-weight: 700;
+  grid-column: span 2;
 }
 
-.story-create form button:hover {
+.post-delete form button:hover {
   background: #0c438b;
   color: #fff;
-}
-
-.story-create form p label {
-  font-size: 1.7rem;
-  margin: 1rem 0;
-}
-
-.story-create form p input {
-  margin-right: 1rem;
 }

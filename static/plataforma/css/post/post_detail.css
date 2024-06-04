@@ -1,5 +1,3 @@
-@charset "UTF-8";
-
 :root {
   --box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
   --border: 0.2rem solid rgba(0, 0, 0, 0.1);
@@ -43,73 +41,47 @@ body {
   clip-path: polygon(100% 0%, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%);
 }
 
-.story-create {
+.post-detail {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
   background: #fff;
   box-shadow: var(--box-shadow);
   border: var(--border);
   margin: 2rem auto;
   padding: 2rem;
-  width: 50%;
+  width: 30%;
 }
 
-.story-create h2 {
-  font-size: 2.2rem;
+.post-detail h1 {
+  font-size: 2rem;
   margin-bottom: 1rem;
 }
 
-.story-create form {
-  display: flex;
-  flex-direction: column;
-}
-
-.story-create form p {
+.post-detail ul {
   display: grid;
   grid-template-columns: 1fr;
-}
-
-.story-create form input {
-  background: #d5e7ff;
-  border: var(--outline);
-  border-radius: 0.5rem;
-  font-size: 1.7rem;
-  margin: 1rem 0;
+  list-style: none;
   padding: 1rem;
 }
 
-.story-create form textarea {
-  background: #d5e7ff;
-  border: var(--outline);
-  border-radius: 0.5rem;
+.post-detail ul li {
   font-size: 1.7rem;
-  margin: 1rem 0;
   padding: 1rem;
 }
 
-.story-create form input:focus {
-  border: var(--outline-hover);
-}
-
-.story-create form button {
-  background: #1876f2;
+.post-detail img {
   border-radius: 0.5rem;
-  color: #fff;
-  cursor: pointer;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.post-detail p {
   font-size: 1.7rem;
-  margin: 1rem 0;
-  padding: 1rem;
-  font-weight: 700;
+  margin-bottom: 1rem;
 }
 
-.story-create form button:hover {
-  background: #0c438b;
-  color: #fff;
-}
-
-.story-create form p label {
-  font-size: 1.7rem;
-  margin: 1rem 0;
-}
-
-.story-create form p input {
-  margin-right: 1rem;
+.resource-delete form button:hover {
+  background: var(--secondary-color);
 }

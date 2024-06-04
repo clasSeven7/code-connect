@@ -5,16 +5,17 @@
 />
 <link
   rel="stylesheet"
-  href="{% static 'plataforma/css/post/post_create.css' %}"
+  href="{% static 'plataforma/css/post/post_update.css' %}"
 />
-<title>Criar Postagens</title>
-<div class="post-create">
+<title>Atualizar - {{ post.name }}</title>
+<div class="post-update">
   <h1 class="heading">
-    Criar
-    <span>Postagens</span>
+    Atualizar
+    <span>Postagem</span>
   </h1>
   <form method="post" enctype="multipart/form-data">
     {% csrf_token %} {{ form_post.as_p }}
-    <button type="submit">Criar</button>
+    <button type="submit">Salvar Alterações</button>
   </form>
+  </div>
 </div>

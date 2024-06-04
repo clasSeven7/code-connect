@@ -1,0 +1,56 @@
+{% include "components/header_simples.html" %} {% load static %}
+<link 
+  rel="stylesheet" 
+  href="{% static 'plataforma/css/header_simples.css' %}" 
+/>
+<link
+  rel="stylesheet"
+  href="{% static 'plataforma/css/post/post_list.css' %}"
+/>
+<title>Listar Postagem</title>
+<div class="post-list">
+  <h1 class="heading">
+    Listas
+    <span>Postagens</span>
+  </h1>
+  <form method="GET">
+    <input type="text" name="ti" placeholder="Pesquisar..." />
+    <select name="orderby">
+      <option value="pub_date">Data de publicação</option>
+      <option value="title">Nome do usuário</option>
+      <option value="user">Hora da publicação</option>
+    </select>
+    <button type="submit">Pesquisar</button>
+  </form>
+</div>
+
+<div class="post-list">
+  <ul>
+    {% for post in posts %}
+    <li class="resource-item">
+      <span class="resource-item-icon">
+        <img
+          style="width: 100px"
+          src="{{ post.icon_user.url }}"
+          alt="{{ post.name }}"
+        />
+      </span>
+      <span class="resource-item-name">{{ post.name }}</span>
+      <span class="resource-item-image">
+        <img
+          style="width: 100px"
+          src="{{ post.image_post.url }}"
+          alt="{{ post.name }}"
+        />
+      </span>
+      <a href="{% url 'post_detail' post.pk %}">Detalhes</a>
+      <a href="{% url 'post_update' post.pk %}">Editar</a>
+      <a href="{% url 'post_delete' post.pk %}">Excluir</a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% block pagination %}
+{% include "components/pagination.html" %}
+{% endblock %}

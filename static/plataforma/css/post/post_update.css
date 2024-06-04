@@ -1,5 +1,3 @@
-@charset "UTF-8";
-
 :root {
   --box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
   --border: 0.2rem solid rgba(0, 0, 0, 0.1);
@@ -43,7 +41,7 @@ body {
   clip-path: polygon(100% 0%, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%);
 }
 
-.story-create {
+.post-update {
   background: #fff;
   box-shadow: var(--box-shadow);
   border: var(--border);
@@ -52,23 +50,33 @@ body {
   width: 50%;
 }
 
-.story-create h2 {
+.post-update h2 {
   font-size: 2.2rem;
   margin-bottom: 1rem;
 }
 
-.story-create form {
+.post-update form {
   display: flex;
   flex-direction: column;
 }
 
-.story-create form p {
+.post-update form p:nth-child(2),
+.post-update form p:nth-child(7) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.post-update form p:nth-child(3),
+.post-update form p:nth-child(4),
+.post-update form p:nth-child(5),
+.post-update form p:nth-child(6) {
   display: grid;
   grid-template-columns: 1fr;
 }
-
-.story-create form input {
-  background: #d5e7ff;
+.post-update form input {
+  background: #f9f9f9;
   border: var(--outline);
   border-radius: 0.5rem;
   font-size: 1.7rem;
@@ -76,8 +84,8 @@ body {
   padding: 1rem;
 }
 
-.story-create form textarea {
-  background: #d5e7ff;
+.post-update form textarea {
+  background: #f9f9f9;
   border: var(--outline);
   border-radius: 0.5rem;
   font-size: 1.7rem;
@@ -85,31 +93,33 @@ body {
   padding: 1rem;
 }
 
-.story-create form input:focus {
+.post-update form input:focus {
   border: var(--outline-hover);
 }
 
-.story-create form button {
-  background: #1876f2;
+.post-update form button {
+  background: var(--primary-color);
   border-radius: 0.5rem;
   color: #fff;
   cursor: pointer;
   font-size: 1.7rem;
   margin: 1rem 0;
   padding: 1rem;
-  font-weight: 700;
 }
 
-.story-create form button:hover {
-  background: #0c438b;
-  color: #fff;
+.post-update form button:hover {
+  background: var(--secondary-color);
 }
 
-.story-create form p label {
+.post-update form p label {
   font-size: 1.7rem;
   margin: 1rem 0;
 }
 
-.story-create form p input {
+.post-update form p input {
   margin-right: 1rem;
+}
+
+.post-update form button:hover {
+  background: var(--secondary-color);
 }

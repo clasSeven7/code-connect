@@ -100,7 +100,8 @@ body {
 }
 
 .post-create form button:hover {
-  background: var(--secondary-color);
+  background: #0c438b;
+  color: #fff;
 }
 
 .post-create form p label {

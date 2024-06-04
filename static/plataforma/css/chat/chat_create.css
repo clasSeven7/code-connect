@@ -100,7 +100,8 @@ body {
 }
 
 .chat-create form button:hover {
-  background: var(--secondary-color);
+  background: #0c438b;
+  color: #fff;
 }
 
 .chat-create form p label {
