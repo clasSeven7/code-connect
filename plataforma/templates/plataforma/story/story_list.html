@@ -11,7 +11,7 @@
 <div class="story-list">
   <h1 class="heading">
     Listas
-    <span>storyagens</span>
+    <span>Stories</span>
   </h1>
   <form method="GET">
     <input type="text" name="ti" placeholder="Pesquisar..." />
@@ -36,8 +36,8 @@
         />
       </span>
       <span class="resource-item-name">{{ story.name }}</span>
-      <span class="resource-item-image">
-      </span>
+      <span class="resource-item-address">{{ story.address }}</span>
+      
       <a href="{% url 'story_detail' story.pk %}">Detalhes</a>
       <a href="{% url 'story_update' story.pk %}">Editar</a>
       <a href="{% url 'story_delete' story.pk %}">Excluir</a>

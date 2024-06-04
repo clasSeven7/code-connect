@@ -11,10 +11,12 @@
 <div class="story-detail">
   <h1 class="heading">
     Detalhes
-    <span>story</span>
+    <span>Story</span>
   </h1>
   <ul>
     <li><strong>Usuário:</strong> {{ story.name }}</li>
+    <li><strong>Data:</strong> {{ story.data }}</li>
+    <li><strong>Endereço:</strong> {{ story.address }}</li>
     {% if object.image %}
     <img
       style="width: 300px"

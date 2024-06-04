@@ -8,7 +8,7 @@
 <div class="story-delete">
   <h1 class="heading">
     Deletar
-    <span>story</span>
+    <span>Story</span>
   </h1>
   <form method="story">
     {% csrf_token %}
@@ -16,7 +16,7 @@
       Você tem certeza que deseja deletar a story de
       <strong>"{{ story.name }}"</strong>?
     </p>
-    {% if object.image_story %}
+    {% if object.image %}
     <img
       style="width: 100px"
       src="{{ object.image.url }}"

@@ -28,8 +28,8 @@
   <ul>
     {% for event in events %}
     <li class="resource-item">
-     
       <span class="resource-item-name">{{ event.name }}</span>
+      <span class="resource-item-address">{{ event.address }}</span>
       
       <a href="{% url 'event_detail' event.pk %}">Detalhes</a>
       <a href="{% url 'event_update' event.pk %}">Editar</a>

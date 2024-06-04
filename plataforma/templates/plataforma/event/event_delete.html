@@ -16,14 +16,6 @@
       Você tem certeza que deseja deletar a Evento de
       <strong>"{{ event.name }}"</strong>?
     </p>
-    {% if object.image_event %}
-    <img
-      style="width: 100px"
-      src="{{ object.image_event.url }}"
-      alt="{{ object.name }}"
-    />
-    {% endif %}
-   
     <button type="submit">Deletar</button>
   </form>
 </div>

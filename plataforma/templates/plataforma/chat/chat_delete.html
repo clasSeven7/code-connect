@@ -4,7 +4,7 @@
   rel="stylesheet"
   href="{% static 'plataforma/css/chat/chat_delete.css' %}"
 />
-<title>Deletar - {{ post.name }}</title>
+<title>Deletar - {{ chat.name }}</title>
 <div class="chat-delete">
   <h1 class="heading">
     Deletar
@@ -16,7 +16,7 @@
       Você tem certeza que deseja deletar o chat de
       <strong>"{{ chat.name }}"</strong>?
     </p>
-    {% if object.image_chat %}
+    {% if object.icon_user %}
     <img
       style="width: 100px"
       src="{{ object.icon_user.url }}"
