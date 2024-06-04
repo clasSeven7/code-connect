@@ -73,7 +73,7 @@ git clone https://github.com/seu-usuario/nome-do-repositorio.git
 
 ## 💡Commit
 
-- 📦 Create - _Funcionalidades novas_
-- 📤 Update - _Atualizações de códigos_
-- 🐞 Bug - _Correções de Bugs_
-- 🚩 Realese - _Versões do projeto_
+- 📦 `feat:` - _Funcionalidades novas_
+- 📤 `fix:` - _Atualizações de códigos_
+- 🐞 `bug:` - _Correções de Bugs_
+- 🚩 `realese:` - _Versões do projeto_
