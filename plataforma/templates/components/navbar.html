@@ -46,7 +46,9 @@
       <div class="user-profile">
         <img src="{% static 'plataforma/assets/profile-pic.png' %}" alt="" />
         <div>
-          <p>Jhon Nicholson</p>
+          {% block login %} 
+          {% include 'components/auth/login.html' %} 
+          {% endblock %}
           <a href="#">Veja seu perfil</a>
         </div>
       </div>

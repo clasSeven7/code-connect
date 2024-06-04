@@ -1,0 +1,26 @@
+{% block content %} {% load static %}
+<link rel="stylesheet" href="{% static 'plataforma/css/auth/login_bar.css' %}" />
+<div class="login-form">
+  <div class="user">
+    {% if user.is_authenticated %}
+      <h2>Olá, {{ user.username }}</h2>
+      <form action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+        <button class="btn" type="submit">Log out</button>
+      </form>
+    {% else %}
+    <h2>Conecte-se</h2>
+    <form action="post">
+      <button type="submit" class="btn" formaction="{% url 'login' %}">
+        Login
+      </button>
+      <button type="submit" class="btn" formaction="{% url 'register' %}">
+        Registrar
+      </button>
+      {% csrf_token %}
+    </form>
+    <p>Esqueceu sua senha? <a href="#">Clique aqui</a></p>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
