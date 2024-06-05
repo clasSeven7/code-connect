@@ -29,15 +29,15 @@
 
 ## 📌Características
 
-**Autenticação de Usuários:** O sistema permite o registro e autenticação de usuários.
-**CRUD de Dados:** Os usuários autenticados podem criar, ler, atualizar e deletar dados.
-**Paginação:** A interface do usuário é projetada para ser responsiva e fácil de usar em vários dispositivos.
-**Filtros de Pesquisa:** Os usuários podem filtrar os produtos por categoria e preço.
+- **Autenticação de Usuários:** O sistema permite o registro e autenticação de usuários.
+- **CRUD de Dados:** Os usuários autenticados podem criar, ler, atualizar e deletar dados.
+- **Paginação:** A interface do usuário é projetada para ser responsiva e fácil de usar em vários dispositivos.
+- **Filtros de Pesquisa:** Os usuários podem filtrar os produtos por categoria e preço.
 
 ## ⌨️Tecnologias Utilizadas
 
-**Django:** Django é um framework de alto nível para Python que incentiva o desenvolvimento rápido e o design limpo e pragmático.
-**Postgres:** Postgres é um sistema de gerenciamento de banco de dados SQL de objeto-relacional.
+- **Django:** Django é um framework de alto nível para Python que incentiva o desenvolvimento rápido e o design limpo e pragmático.
+- **Postgres:** Postgres é um sistema de gerenciamento de banco de dados SQL de objeto-relacional.
 
 ## 📋Pré-requisitos
 
